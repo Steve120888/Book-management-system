@@ -1,0 +1,73 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<prjHw2new.Models.TableBooks1091735>
+
+@{
+    ViewBag.Title = "書籍";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<h2>書籍資料</h2>
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-info">
+        <strong>無書籍記錄</strong>
+    </div>
+}
+else
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().fBookISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().fBookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().fBookAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().fBookPublisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().fPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fBookISBN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fBookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fBookAuthor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fBookPublisher)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fPrice)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit")?fBookISBN=@item.fBookISBN" class="btn btn-warning">編輯</a>
+                    <a href="@Url.Action("Delete")?fBookISBN=@item.fBookISBN"
+                       class="btn btn-danger"
+                       onclick="return confirm('確定要刪除編號 @item.fBookISBN 的書籍記錄嗎？');">
+                        刪除
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

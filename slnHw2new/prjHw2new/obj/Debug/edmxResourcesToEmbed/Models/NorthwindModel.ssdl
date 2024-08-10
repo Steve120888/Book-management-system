@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TableBooks1091735">
+    <Key>
+      <PropertyRef Name="fBookISBN" />
+    </Key>
+    <Property Name="fBookISBN" Type="nchar" MaxLength="13" Nullable="false" />
+    <Property Name="fBookName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fBookAuthor" Type="nvarchar" MaxLength="10" />
+    <Property Name="fBookPublisher" Type="nvarchar" MaxLength="10" />
+    <Property Name="fPrice" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="NorthwindModelStoreContainer">
+    <EntitySet Name="TableBooks1091735" EntityType="Self.TableBooks1091735" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

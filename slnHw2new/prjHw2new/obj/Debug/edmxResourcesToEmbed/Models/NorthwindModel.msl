@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+    <EntitySetMapping Name="TableBooks1091735">
+      <EntityTypeMapping TypeName="NorthwindModel.TableBooks1091735">
+        <MappingFragment StoreEntitySet="TableBooks1091735">
+          <ScalarProperty Name="fBookISBN" ColumnName="fBookISBN" />
+          <ScalarProperty Name="fBookName" ColumnName="fBookName" />
+          <ScalarProperty Name="fBookAuthor" ColumnName="fBookAuthor" />
+          <ScalarProperty Name="fBookPublisher" ColumnName="fBookPublisher" />
+          <ScalarProperty Name="fPrice" ColumnName="fPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
